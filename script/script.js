@@ -25,7 +25,7 @@ const data = [
     }
 ]
 let table_body = document.querySelector('.table-body')
-
+let searchInput = document.querySelector('#searchInput')
 class manage{
     constructor(d){
         this.data = d;
@@ -55,13 +55,31 @@ class manage{
     sort(by_item){
         console.log(`sorting data... by ${by_item}`);
     }
-    search(query){
-        console.log(`searching data...  ${query}`);   
+    search(){
+        console.log(`searching data... `);
+        searchInput.addEventListener('input', (e) => {
+          table_body.innerHTML = ""
+          const findName = searchInput.value.toLowerCase();
+          let found = this.data.filter(item => item.name.toLowerCase().includes(findName));
+  
+          if(found.length >0){
+            console.log("ok");
+            found.forEach((elt) => {
+              table_body.innerHTML += this.getRow(table_body.children.length,elt);
+            });
+            
+            
+          }else{
+            console.log("error");
+            table_body.innerHTML = "<tr><td colspan='5'style=\"color:red;\">No results found.</td></tr>";
+          }
+          
+      });
     }
     run(){
       this.display();
       this.sort('date_joined');
-      this.search('Moderator');  
+      this.search();  
     }
 }
 
