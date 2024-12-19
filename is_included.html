@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <script>
+            const string = "Hello, world!";
+            const sub_str = "hello"
+            // chek if sub_str is included in string
+
+            if (string.includes(sub_str)) {
+                console.log(`${sub_str} is included in ${string}`);
+            }else{
+                console.log(`${sub_str} is not included in ${string}`);
+            }
+            console.log("---------------------------------------------------");
+            
+            // check with case handling
+            if (string.toUpperCase().includes(sub_str.toUpperCase())) {
+                console.log(`${sub_str} is included in ${string}`);
+            }
+            
+            // chenge if included
+            let a = "hello";
+            let substring = "ello";
+
+            if (a.includes(substring)){
+                const format = `<spam>${substring}</spam>`
+                a = a.replace(substring, format.toUpperCase());
+            }
+
+            console.log(a);  // Output: hELLO
+
+            
+
+        </script>
+    </body>
+</html>

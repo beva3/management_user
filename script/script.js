@@ -64,17 +64,21 @@ class manage{
   
           if(found.length >0){
             console.log("ok");
-            found.forEach((elt) => {
-              table_body.innerHTML += this.getRow(table_body.children.length,elt);
+            console.log(found);
+            
+            found.forEach((elt_row) => {
+              table_body.innerHTML += this.getRow(table_body.children.length,elt_row);
             });
+            // console.log(`found => ${found.name}`);
             
             
           }else{
             console.log("error query not found");
             table_body.innerHTML = "<tr><td colspan='5'style=\"color:red;\">No results found.</td></tr>";
           }
+          console.log(`findName: ${findName}`);
           
-      });
+        });
     }
     run(){
       this.display();
