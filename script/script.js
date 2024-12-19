@@ -70,7 +70,7 @@ class manage{
             
             
           }else{
-            console.log("error");
+            console.log("error query not found");
             table_body.innerHTML = "<tr><td colspan='5'style=\"color:red;\">No results found.</td></tr>";
           }
           
