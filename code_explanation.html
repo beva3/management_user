@@ -1,6 +1,7 @@
 <html>
     <body>
         <script>
+            /* filter */
             const name = [
                 "Beva",
                 "John Doe",
@@ -11,6 +12,25 @@
             console.log(name.length);
             const name_filtered = name.filter((n)=>n.length > 6);
             console.log(name_filtered);
+            /* ------------------------------------------------------------- */
+
+            const user = [
+                { name: "johndoe", email: "johndoe@example.com", role: "Admin", registered: "2024-01-15" },
+                { name: "janesmith", email: "janesmith@example.com", role: "User", registered: "2024-02-01" },
+                { name: "mielj", email: "michaelj@example.com", role: "Moderator", registered: "2024-03-20" },
+                { name: "Alice", email: "alice@example.com", role: "VIP", registered: "2024-04-01" },
+                { name: "Bob", email: "bob@example.com", role: "VIP", registered: "2024-05-15" }
+            ]
+            console.log(user);
+            console.log("Length = ",user.length);
+            user.forEach((element) => {
+                console.log(element.name,element.name.length);
+                
+            });
+            const user_filtered = user.filter((element) => element.name.length <6)
+            console.log("Filtered User = ",user_filtered);
+            
+            
             
             
         </script>
