@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            const Numbers = [0,1,2,3,4,5,6,7,8,9]
+            const sum = Numbers.reduce((s,i)=>{
+                console.log(`sum = ${s}, i = ${i}`);
+                return s + i;
+            },0)
+            
+
+            console.log(`Final sum: ${sum}`);  // Output: Final sum: 45
+
+            console.log(sum);
+            const fruits = [
+                "apple",
+                "banana",
+                "banana",
+                "Apple",
+                "orange",
+                "apple",
+                "mango",
+                "pear",
+                "grape",
+                "kiwi",
+                "apple",
+                "grape",
+                "kiwi"
+            ];
+            const count = fruits.reduce((acc,fruit)=>{
+                const a = (acc[fruit] || 0) + 1;
+                acc[fruit] = a;
+                console.log('acc',acc,'acc[fruit]',acc[fruit],'a => ',a,'f = >',fruit); // Output:
+                
+                return acc;  // Return the updated accumulator object.
+            },{})
+            console.log(count);
+
+            // find max
+            const max = Numbers.reduce((currentNumber, currentMax)=>{
+                return (currentNumber > currentMax) ? currentNumber:currentMax;
+            },-Infinity)
+            console.log(max);
+            
+            // array to object
+            console.log("array to object");
+            console.log('---------------------------------------------');
+            const user = [
+                {id : 1, name : 'raphael'},
+                {id : 2, name : 'gabriel'},
+                {id : 3, name : 'bienvenu'}
+            ]
+            const object_user = user.reduce((myObj,user)=>{
+                myObj[user.id] = user.name;
+                console.log(user.id,user.name);
+                
+                return myObj;
+            },{})
+            console.log(object_user);
+
+            console.log("regrouped");
+            console.log('--------------------------------------------');
+            const products = [
+                {name : 'Laptop', category : 'Electtronic'},
+                {name : 'Shirt', category : 'Clothing'},
+                {name : 'Pencil', category : 'School Supplies'},
+                {name : 'Monitor', category : 'Electtronic'},
+                {name : 'Shirt', category : 'Clothing'},
+                {name : 'Laptop', category : 'Electtronic'},
+                {name : 'Mouse', category : 'Electtronic'},
+            ]
+            const group_products = products.reduce((myGroup, prd)=>{
+                if(!myGroup[prd.category]){
+                    myGroup[prd.category] = [];
+                }
+                myGroup[prd.category].push(prd.name);
+                // console.log(prd.category,prd.name);
+                
+                return myGroup;
+            },{})
+            console.log(group_products);
+            
+            /**
+                reduce : more value => reduce
+                sum,
+                max,
+                regrouped
+                array to object
+            */
+            
+        </script>
+    </body>
+</html>
