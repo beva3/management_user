@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map filter reduce</title>
+</head>
+<body>
+    <script>
+        // Map function
+        const nbrs = [1,2,3,4,5,6]
+        const squares = nbrs.map((n)=>{
+            return n*n;
+        })
+        console.log("Numbers: ", nbrs);
+        console.log("Squares: ", squares);
+
+        // filter function
+        const even_numbrs = nbrs.filter((n)=>{
+            return n % 2 === 0;
+        })
+        console.log("Numbers: ", nbrs);
+        console.log("Even Numbers: ", even_numbrs);
+
+        // reduce function
+        const sum_of_number = nbrs.reduce((sum,n) => {
+            return sum + n;
+        },0)
+        console.log("Numbers: ", nbrs);
+        console.log("Sum of Numbers: ", sum_of_number);
+    </script>
+</body>
+</html>
