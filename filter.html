@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+</head>
+<body>
+    <script>
+        // Begunner level
+        
+        //1 ! filter  even number
+        const number = [1,2,3,4,5,6,7,8,9,10,11]
+        const event_number = number.filter(num => num % 2 === 0);
+        console.log(event_number);
+        
+        //2 filter string by length
+        const words = ['cat','dog','elephant','ant']
+        const long_word = words.filter(w => w.length >3)
+        const short_word = words.filter(w => w.length<=3)
+        console.log(long_word);
+        console.log(short_word)
+        
+
+        //3 filter passing grades
+        const grads = [45,67,23,50]
+        const passingGrades = grads.filter(gr => gr>= 50)
+        console.log(passingGrades);
+        
+        // 4 filter by object properties
+        const peopples = [
+            {name : "raphael", age :21},
+            {name : "BEva", age :23},
+            {name : "Koto", age :12},
+            {name : "Sera", age :24}
+        ]
+        const adult = peopples.filter(persone => persone.age >=18)
+        console.log(adult);
+        
+        // 5 filter prim number
+        const numbers = []
+        for (let n = 0; n < 100; n++) {
+            numbers.push(n)
+        }
+        
+        const prime =(n =>{
+            if (n<2) return false
+            for (let i = 2; i*i <= n; i++) {
+                if(n % i === 0) return false
+            }
+            return true
+        })
+        const prim_numbers = numbers.filter(prime)
+        console.log(prim_numbers);
+        
+        // 6
+        const products = [
+            {name : "Laptop", price:100,available : true},
+            {name : "Thosiba", price:200,available : true},
+            {name : "Poco", price:200,available : false},
+            {name : "Zte", price:100,available : true},
+            {name : "Samsung", price:900,available : false},
+            {name : "Dell", price:700,available : false},
+            {name : "Hp", price:300,available : true},
+            {name : "IPhone", price:100,available : true},
+            {name : "Itel", price:400,available : false}
+        ]
+        const s = products.filter(p => p.price < 500 && p.available)
+        console.log(s)
+    </script>
+</body>
+</html>
